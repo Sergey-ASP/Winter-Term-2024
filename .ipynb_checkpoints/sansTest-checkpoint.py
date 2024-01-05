@@ -33,13 +33,12 @@ system.energy = (
 def m_value(pos):
     return 2 * np.random.rand(3) -1
 
-system.m = df.Field(mesh, 3, value=m_value, norm=Ms_value)
+system.m = df.Field(mesh, dim=3, value=m_value, norm=Ms_value)
 
 md = oc.MinDriver()
 md.drive(system)
 plot = k3d.Plot()
 system.m.__getattr__('z').k3d.scalar(filter_field=system.m.norm, multiplier=1e-6);
-system.m.plane("z").mpl()
 k3d.Plot.display(plot);
 
 import mag2exp
