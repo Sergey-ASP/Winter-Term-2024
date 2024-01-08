@@ -5,6 +5,7 @@ import numpy as np
 import micromagneticmodel as mm
 import oommfc as oc
 import k3d
+import magna.utils as mu
 
 
 
@@ -39,21 +40,23 @@ md = oc.MinDriver()
 md.drive(system)
 plot = k3d.Plot()
 system.m.__getattr__('z').k3d.scalar(filter_field=system.m.norm, multiplier=1e-6);
-system.m.plane("z").mpl()
+system.m.sel("z").mpl()
 k3d.Plot.display(plot);
+
+
 
 import mag2exp
 cross_section = mag2exp.sans.cross_section(
-    system.m, method="unpol", polarisation=(0, 0, 1)
+    system.m, method="unpol", polarisation=( 0, 0, 1)
 )
 
-cross_section.plane(z=0).mpl.scalar(
+cross_section.sel(k_z=0).mpl.scalar(
     cmap="gray", interpolation="spline16", colorbar_label=r"Intensity"
 )
 
 import matplotlib.colors as colors
 
-cross_section.plane(z=0).mpl.scalar(
+cross_section.sel(k_z=0).mpl.scalar(
     cmap="gray",
     colorbar_label=r"Intensity",
     norm=colors.LogNorm(vmin=1e-3, vmax=cross_section.real.array.max()),

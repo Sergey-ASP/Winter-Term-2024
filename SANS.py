@@ -24,8 +24,8 @@ def m_fun(pos):
 
 
 # create system with above geometry and initial magnetisation
-system.m = df.Field(mesh, dim=3, value=m_fun, norm=Ms)
-system.m.plane("z").mpl()
+system.m = df.Field(mesh, nvdim=3, value=m_fun, norm=Ms)
+system.m.sel("z").mpl()
 
 # minimize the energy
 md = oc.MinDriver()
@@ -34,7 +34,7 @@ md.drive(system)
 system.m.to_file('testData.hdf5')
 
 # Plot relaxed configuration: vectors in z-plane
-system.m.plane("z").mpl()
+system.m.sel("z").mpl()
 
 # import mag2exp
 # cross_section = mag2exp.sans.cross_section(
