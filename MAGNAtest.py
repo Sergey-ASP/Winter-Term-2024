@@ -6,9 +6,11 @@ import magna.utils as mu
 
 magna = mu.MNP(id=-1, name="test", n_layers=1)
 magna.save_fields();
-magna.maku()
-
 mu.quick_drive(magna)
+M, A, K, U = magna.maku()
+
+M.to_file("magnaTestData.vtk")
+
 
 
 print("done")

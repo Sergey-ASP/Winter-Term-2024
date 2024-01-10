@@ -31,7 +31,7 @@ system.m.sel("z").mpl()
 md = oc.MinDriver()
 md.drive(system)
 
-system.m.to_file('testData.hdf5')
+system.m.to_file('testData.omf', representation="txt")
 
 # Plot relaxed configuration: vectors in z-plane
 system.m.sel("z").mpl()

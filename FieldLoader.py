@@ -2,6 +2,9 @@ import discretisedfield as df
 import mag2exp
 import magna.utils as mu
 import matplotlib.pyplot as mpl
+import xarray_extras.csv as xe
+import pandas as pd
+import numpy as np
 
 filename = "MNP_Data/test/mnp_0/m_field_mnp_0.ovf"
 
@@ -9,11 +12,28 @@ filename = "MNP_Data/test/mnp_0/m_field_mnp_0.ovf"
 
 
 read_field = df.Field.from_file(filename)
+
+xarr = read_field.to_xarray()
+
+nparr = np.array(xarr) 
+print(xarr)
+df = xarr.to_dataframe();
+print(df.axes)
+xarr.to_netcdf("testData.nc")
+# df.to_csv('testData.csv', index=False)
+
+# print(xarr.drop('vdims'))
+
+
+# dropped = xarr.drop_vars('vdims')
+# dropped.to_pandas().to_csv();
+# xe.to_csv(dropped, "testData.csv")
+
 read_field.norm.sel('z').mpl()
-obj = mu.load_mnp(4, 'test')
+# obj = mu.load_mnp(4, 'test')
 
 
-plotter = mu.MNP_Analyzer(obj)
+# plotter = mu.MNP_Analyzer(obj)
 
 # mu.MNP_Analyzer.k3d_center_vectors(plotter)
 
