@@ -9,7 +9,7 @@ magna.save_fields();
 mu.quick_drive(magna)
 M, A, K, U = magna.maku()
 
-M.to_file("magnaTestData.vtk")
+M.to_file("magnaTestData.omf", representation="txt")
 
 
 

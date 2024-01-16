@@ -19,15 +19,6 @@ nparr = np.array(xarr)
 print(xarr)
 df = xarr.to_dataframe();
 print(df.axes)
-xarr.to_netcdf("testData.nc")
-# df.to_csv('testData.csv', index=False)
-
-# print(xarr.drop('vdims'))
-
-
-# dropped = xarr.drop_vars('vdims')
-# dropped.to_pandas().to_csv();
-# xe.to_csv(dropped, "testData.csv")
 
 read_field.norm.sel('z').mpl()
 # obj = mu.load_mnp(4, 'test')

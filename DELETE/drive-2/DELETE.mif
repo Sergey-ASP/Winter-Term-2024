@@ -1,0 +1,100 @@
+# MIF 2.2
+
+SetOptions {
+  basename DELETE
+  scalar_output_format %.12g
+  scalar_field_output_format {binary 8}
+  vector_field_output_format {binary 8}
+}
+
+# BoxAtlas for main_atlas
+Specify Oxs_BoxAtlas:main_atlas {
+  xrange { -2.55e-08 2.55e-08 }
+  yrange { -2.55e-08 2.55e-08 }
+  zrange { -4.25e-09 8.5e-09 }
+  name main
+}
+
+# RectangularMesh
+Specify Oxs_RectangularMesh:mesh {
+  cellsize { 1.0625e-09 1.0625e-09 1.0625e-09 }
+  atlas :main_atlas
+}
+
+# Demag
+Specify Oxs_Demag:demag {
+}
+
+# exchange_A file
+Specify Oxs_FileVectorField:exchange_A {
+  file exchange_A.ovf
+  atlas :main_atlas
+}
+
+# exchange_A_norm
+Specify Oxs_VecMagScalarField:exchange_A_norm {
+    field :exchange_A
+}
+
+# ExchangePtwise
+Specify Oxs_ExchangePtwise:exchange {
+  A exchange_A_norm
+}
+
+# uniaxialanisotropy_K file
+Specify Oxs_FileVectorField:uniaxialanisotropy_K {
+  file uniaxialanisotropy_K.ovf
+  atlas :main_atlas
+}
+
+# uniaxialanisotropy_K_norm
+Specify Oxs_VecMagScalarField:uniaxialanisotropy_K_norm {
+    field :uniaxialanisotropy_K
+}
+
+# uniaxialanisotropy_u file
+Specify Oxs_FileVectorField:uniaxialanisotropy_u {
+  file uniaxialanisotropy_u.ovf
+  atlas :main_atlas
+}
+
+# UniaxialAnisotropy
+Specify Oxs_UniaxialAnisotropy:uniaxialanisotropy {
+  K1 uniaxialanisotropy_K_norm
+  axis uniaxialanisotropy_u
+}
+
+# FixedZeeman
+Specify Oxs_FixedZeeman:zeeman {
+  field {0 0 79577.47154594767}
+}
+
+# m0 file
+Specify Oxs_FileVectorField:m0 {
+  file m0.omf
+  atlas :main_atlas
+}
+
+# m0_norm
+Specify Oxs_VecMagScalarField:m0_norm {
+    field :m0
+}
+
+# CGEvolver
+Specify Oxs_CGEvolve:evolver {
+}
+
+# MinDriver
+Specify Oxs_MinDriver {
+  evolver :evolver
+  mesh :mesh
+  Ms :m0_norm
+  m0 :m0
+  stopping_mxHxm 0.1
+}
+
+Destination table mmArchive
+Destination mags mmArchive
+
+Schedule DataTable table Stage 1
+Schedule Oxs_MinDriver::Magnetization mags Stage 1
