@@ -18,7 +18,6 @@ xarr = read_field.to_xarray()
 nparr = np.array(xarr) 
 print(xarr)
 df = xarr.to_dataframe();
-print(df.axes)
 
 read_field.norm.sel('z').mpl()
 # obj = mu.load_mnp(4, 'test')
