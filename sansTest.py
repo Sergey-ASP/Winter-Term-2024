@@ -5,7 +5,8 @@ import numpy as np
 import micromagneticmodel as mm
 import oommfc as oc
 import k3d
-import magna.utils as mu
+import ubermag
+# import magna.utils as mu
 
 
 
