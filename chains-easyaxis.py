@@ -717,7 +717,7 @@ csvname68 = './csvData/68nm-data-easyaxis(' + str(driveIndex) + ').csv'
 hd = mc.HysteresisDriver() 
 hd = mc.MinDriver();
 hd.drive(system, Hmin=Hmin, Hmax=Hmax, n=n, n_threads=12)
-system.m.to_file("chains-easyaxis.omf", representation='txt')
+system.m.to_file("chains-easyaxis.vtk", representation='txt')
 # system.table.data.to_csv(csvname68, index = True) 
 # print(str(int(spc*10**9)) + 'nm written to csv')
 

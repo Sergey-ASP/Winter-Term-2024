@@ -1,0 +1,224 @@
+# MIF 2.2
+
+SetOptions {
+  basename easyaxis_68nm_1T
+  scalar_output_format %.12g
+  scalar_field_output_format {binary 8}
+  vector_field_output_format {binary 8}
+}
+
+# BoxAtlas for region_1_atlas
+Specify Oxs_BoxAtlas:region_1_atlas {
+  xrange { 0.0 2.2e-08 }
+  yrange { 0.0 3.2e-08 }
+  zrange { 0.0 7e-08 }
+  name region_1
+}
+
+# BoxAtlas for region_2_atlas
+Specify Oxs_BoxAtlas:region_2_atlas {
+  xrange { 2.4e-08 4.5999999999999995e-08 }
+  yrange { 0.0 3.2e-08 }
+  zrange { 0.0 7e-08 }
+  name region_2
+}
+
+# BoxAtlas for region_3_atlas
+Specify Oxs_BoxAtlas:region_3_atlas {
+  xrange { 0.0 2.2e-08 }
+  yrange { 3.4e-08 6.600000000000001e-08 }
+  zrange { 0.0 7e-08 }
+  name region_3
+}
+
+# BoxAtlas for region_4_atlas
+Specify Oxs_BoxAtlas:region_4_atlas {
+  xrange { 2.4e-08 4.5999999999999995e-08 }
+  yrange { 3.4e-08 6.600000000000001e-08 }
+  zrange { 0.0 7e-08 }
+  name region_4
+}
+
+# BoxAtlas for region_5_atlas
+Specify Oxs_BoxAtlas:region_5_atlas {
+  xrange { 0.0 2.2e-08 }
+  yrange { 6.8e-08 1.0000000000000001e-07 }
+  zrange { 0.0 7e-08 }
+  name region_5
+}
+
+# BoxAtlas for region_6_atlas
+Specify Oxs_BoxAtlas:region_6_atlas {
+  xrange { 2.4e-08 4.5999999999999995e-08 }
+  yrange { 6.8e-08 1.0000000000000001e-07 }
+  zrange { 0.0 7e-08 }
+  name region_6
+}
+
+# BoxAtlas for region_7_atlas
+Specify Oxs_BoxAtlas:region_7_atlas {
+  xrange { 0.0 2.2e-08 }
+  yrange { 1.0200000000000001e-07 1.34e-07 }
+  zrange { 0.0 7e-08 }
+  name region_7
+}
+
+# BoxAtlas for region_8_atlas
+Specify Oxs_BoxAtlas:region_8_atlas {
+  xrange { 2.4e-08 4.5999999999999995e-08 }
+  yrange { 1.0200000000000001e-07 1.34e-07 }
+  zrange { 0.0 7e-08 }
+  name region_8
+}
+
+# BoxAtlas for region_9_atlas
+Specify Oxs_BoxAtlas:region_9_atlas {
+  xrange { 0.0 2.2e-08 }
+  yrange { 1.36e-07 1.68e-07 }
+  zrange { 0.0 7e-08 }
+  name region_9
+}
+
+# BoxAtlas for region_10_atlas
+Specify Oxs_BoxAtlas:region_10_atlas {
+  xrange { 2.4e-08 4.5999999999999995e-08 }
+  yrange { 1.36e-07 1.68e-07 }
+  zrange { 0.0 7e-08 }
+  name region_10
+}
+
+# BoxAtlas for region_11_atlas
+Specify Oxs_BoxAtlas:region_11_atlas {
+  xrange { 0.0 2.2e-08 }
+  yrange { 1.7000000000000001e-07 2.0200000000000004e-07 }
+  zrange { 0.0 7e-08 }
+  name region_11
+}
+
+# BoxAtlas for region_12_atlas
+Specify Oxs_BoxAtlas:region_12_atlas {
+  xrange { 2.4e-08 4.5999999999999995e-08 }
+  yrange { 1.7000000000000001e-07 2.0200000000000004e-07 }
+  zrange { 0.0 7e-08 }
+  name region_12
+}
+
+# BoxAtlas for interspace_atlas
+Specify Oxs_BoxAtlas:interspace_atlas {
+  xrange { 0.0 4.5999999999999995e-08 }
+  yrange { 0.0 2.0200000000000004e-07 }
+  zrange { 0.0 3.42e-07 }
+  name interspace
+}
+
+# BoxAtlas for entire_atlas
+Specify Oxs_BoxAtlas:entire_atlas {
+  xrange { 0.0 4.5999999999999995e-08 }
+  yrange { 0.0 2.0200000000000004e-07 }
+  zrange { 0.0 3.42e-07 }
+  name entire
+}
+
+# MultiAtlas
+Specify Oxs_MultiAtlas:main_atlas {
+  atlas :region_1_atlas
+  atlas :region_2_atlas
+  atlas :region_3_atlas
+  atlas :region_4_atlas
+  atlas :region_5_atlas
+  atlas :region_6_atlas
+  atlas :region_7_atlas
+  atlas :region_8_atlas
+  atlas :region_9_atlas
+  atlas :region_10_atlas
+  atlas :region_11_atlas
+  atlas :region_12_atlas
+  atlas :interspace_atlas
+  atlas :entire_atlas
+  xrange { 0.0 4.5999999999999995e-08 }
+  yrange { 0.0 2.0200000000000004e-07 }
+  zrange { 0.0 3.42e-07 }
+}
+
+# RectangularMesh
+Specify Oxs_RectangularMesh:mesh {
+  cellsize { 1.9999999999999997e-09 2.0000000000000005e-09 2e-09 }
+  atlas :main_atlas
+}
+
+# Exchange6Ngbr
+Specify Oxs_Exchange6Ngbr:exchange {
+  default_A 0
+  atlas :main_atlas
+  A {
+    region_1 region_1 1.2e-11
+    region_2 region_2 1.2e-11
+    region_3 region_3 1.2e-11
+    region_4 region_4 1.2e-11
+    region_5 region_5 1.2e-11
+    region_6 region_6 1.2e-11
+    region_7 region_7 1.2e-11
+    region_8 region_8 1.2e-11
+    region_9 region_9 1.2e-11
+    region_10 region_10 1.2e-11
+    region_11 region_11 1.2e-11
+    region_12 region_12 1.2e-11
+    interspace interspace 0
+  }
+}
+
+# uniaxialanisotropy_u
+Specify Oxs_AtlasVectorField:uniaxialanisotropy_u {
+  atlas :main_atlas
+  default_value {0 0 0}
+  values {
+    region_1 {0.7386876839049908 -0.5547909596374335 0.3828152253394004}
+    region_2 {0.814323554308888 0.218902898122081 0.5375487606640845}
+    region_3 {-0.4995230209483142 -0.4458976492426919 0.7427328173323913}
+    region_4 {0.0108460850617361 -0.7072253348323662 -0.706905006496687}
+    region_5 {-0.498422576577805 0.8578490102476984 0.1251799136226983}
+    region_6 {0.2455267889392998 0.6989491791041145 -0.6717042808727968}
+    region_7 {-0.6087248307671668 -0.6949148031635448 0.3828152253394004}
+    region_8 {-0.2647254913379124 0.5998425911857711 -0.7550558125300676}
+    region_9 {-0.6602184827399918 0.6825539599272376 -0.3134192828084292}
+    region_10 {-0.0029969382773177 0.1954171172901239 0.9807156410657372}
+    region_11 {-0.5990081035109214 0.5148865479795826 0.6132545431041816}
+    region_12 {0.9128762381000228 -0.2615823523791317 -0.3134192828084292}
+    interspace {1 0 0}
+  }}
+
+# UniaxialAnisotropy
+Specify Oxs_UniaxialAnisotropy:uniaxialanisotropy {
+  K1 60000.0
+  axis uniaxialanisotropy_u
+}
+
+# m0 file
+Specify Oxs_FileVectorField:m0 {
+  file m0.omf
+  atlas :main_atlas
+}
+
+# m0_norm
+Specify Oxs_VecMagScalarField:m0_norm {
+    field :m0
+}
+
+# CGEvolver
+Specify Oxs_CGEvolve:evolver {
+}
+
+# MinDriver
+Specify Oxs_MinDriver {
+  evolver :evolver
+  mesh :mesh
+  Ms :m0_norm
+  m0 :m0
+  stopping_mxHxm 0.1
+}
+
+Destination table mmArchive
+Destination mags mmArchive
+
+Schedule DataTable table Stage 1
+Schedule Oxs_MinDriver::Magnetization mags Stage 1
