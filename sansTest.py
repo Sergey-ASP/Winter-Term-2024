@@ -6,6 +6,7 @@ import micromagneticmodel as mm
 import oommfc as oc
 import k3d
 import ubermag
+import numpy as np
 # import magna.utils as mu
 
 
@@ -41,7 +42,7 @@ md = oc.MinDriver()
 md.drive(system)
 plot = k3d.Plot()
 system.m.__getattr__('z').k3d.scalar(filter_field=system.m.norm, multiplier=1e-6);
-system.m.sel("z").mpl()
+# system.m.sel("z").mpl()
 k3d.Plot.display(plot);
 
 
@@ -57,10 +58,14 @@ cross_section.sel(k_z=0).mpl.scalar(
 
 import matplotlib.colors as colors
 
-cross_section.sel(k_z=0).mpl.scalar(
-    cmap="gray",
-    colorbar_label=r"Intensity",
-    norm=colors.LogNorm(vmin=1e-3, vmax=cross_section.real.array.max()),
-)
+# cross_section.sel(k_z=0).mpl.scalar(
+#     cmap="gray",
+#     colorbar_label=r"Intensity",
+#     norm=colors.LogNorm(vmin=1e-3, vmax=cross_section.real.array.max()),
+# )
+
+mpl.figure(1);
+mpl.get()
+    
 
 mpl.show()

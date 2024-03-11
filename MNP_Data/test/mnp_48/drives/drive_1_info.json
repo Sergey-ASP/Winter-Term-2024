@@ -1,0 +1,1 @@
+{"Id": 48, "Name": "test", "Layer Radius": 1, "Layer Dims": [1, 2], "Number of Layers": 1, "Discretizations": [10, 10, 10], "Ms Core": 390000.0, "Ms Shell": 240000.0, "A Core": 9e-12, "A Shell": 5e-12, "K Core": 54000.0, "K Shell": 20000.0, "Easy Axis Type": "random_plane", "Bx": 0.0, "By": 0.0, "Bz": 0.1, "Drive Number": 1, "Date": "Thu Mar  7 01:02:58 2024"}
