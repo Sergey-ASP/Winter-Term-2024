@@ -1,13 +1,3 @@
-cinder_theme: true
-
-static_templates:
-  - 404.html
-
-include_search_page: false
-search_index_only: false
-
-shortcuts:
-    help: 191    # ?
-    next: 78     # n
-    previous: 80 # p
-    search: 83   # s
+version https://git-lfs.github.com/spec/v1
+oid sha256:9b05052fa6df0efb5924cbd1f89c8c84f3282cecd500cc8fe7429595c469d59d
+size 200

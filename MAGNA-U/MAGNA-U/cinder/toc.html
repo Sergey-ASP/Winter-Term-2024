@@ -1,13 +1,3 @@
-<div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        {%- for toc_item in page.toc %}
-        <li class="first-level {% if toc_item.active %}active{% endif %}"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
-            {%- for toc_item in toc_item.children %}
-            <li class="second-level"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
-                {% for toc_item in toc_item.children %}
-                <li class="third-level"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
-                {%- endfor %}
-            {%- endfor %}
-        {%- endfor %}
-    </ul>
-</div>
+version https://git-lfs.github.com/spec/v1
+oid sha256:0a032b98239e1e4aaa228ae968ae9f3b621b4f471349988777369859101f3284
+size 673

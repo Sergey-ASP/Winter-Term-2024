@@ -1,1 +1,3 @@
-{"Id": 53, "Name": "test", "Layer Radius": 1, "Layer Dims": [1, 2], "Number of Layers": 1, "Discretizations": [10, 10, 10], "Ms Core": 390000.0, "Ms Shell": 240000.0, "A Core": 9e-12, "A Shell": 5e-12, "K Core": 54000.0, "K Shell": 20000.0, "Easy Axis Type": "random_plane", "Bx": 0.0, "By": 0.0, "Bz": 0.1, "Drive Number": 1, "Date": "Thu Mar  7 01:35:17 2024"}
+version https://git-lfs.github.com/spec/v1
+oid sha256:11643861eb8f2c203a98f8314768880617d6af99e3fd692124dea5919368700a
+size 362

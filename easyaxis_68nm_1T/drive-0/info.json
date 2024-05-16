@@ -1,1 +1,3 @@
-{"drive_number": 0, "date": "2024-01-16", "time": "22:56:04", "driver": "HysteresisDriver", "Hmin": [0, 0, -795774.7154594767], "Hmax": [0, 0, 795774.7154594767], "n": 1000, "n_threads": 12}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5d49cba6ff4e8b3166a1cdc3d01e06f1e299189b863664f4b8eca0bfcdb0a708
+size 190

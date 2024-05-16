@@ -1,22 +1,3 @@
-###             MNP 51 Summary                       
-|                Property                |   Value    |
-| -------------------------------------- | ---------- |
-| ID                                     | 51         |
-| R_Total (m)                            | 2.50e-08   |
-| R_Shell (m)                            | 3.00e-09   |
-| R_Core (m)                             | 3.00e-09   |
-| Discretizations per R_total (x, y, z)  | (10,10,10)    |
-| Ms_Shell (A/m)                         | 2.40e+05   |
-| Ms_Core (A/m)                          | 3.90e+05   |
-| A_Shell J/m)                           | 5.00e-12   |
-| A_Core (J/m)                           | 9.00e-12   |
-| K_Shell (J/m^3)                        | 2.00e+04   |
-| K_Core (J/m^3)                         | 5.40e+04   |
-| Lattice Name                           | test       |
-| Lattice Form                           | fcc        |
-| Lattice Shape                          | rectangle  |
-| Number of Lattice Layers               | 1          |
-| Lattice Layer Radius (# of Spheres)    | 1          |
-| Lattice Layer Dimensions (# of spheres)| (1 , 2 )   |
-
-Easy Axes List: [(-0.120356385938019, -0.6375502738447869, 0), (0.7043765018412311, -0.47585841203034773, 0)]
+version https://git-lfs.github.com/spec/v1
+oid sha256:e0a2b710f29bf0c8a3b79e932b3d80b5d7036d529e2a2cc90bbcd45c8ce622ec
+size 1231

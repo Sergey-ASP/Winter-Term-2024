@@ -1,1 +1,3 @@
-{"drive_number": 2, "date": "2024-01-16", "time": "23:49:22", "driver": "MinDriver", "Hmin": [0, 0, -795774.7154594767], "Hmax": [0, 0, 795774.7154594767], "n": 1000, "n_threads": 12}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6466c9a4fb5696e806e76ae9273275855456fa07e41fbc3d88e690def8c3ec79
+size 183

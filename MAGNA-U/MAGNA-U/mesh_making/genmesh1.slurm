@@ -1,10 +1,3 @@
-#!/usr/bin/bash
-
-##SBATCH --partition=48core
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --job-name=genmesh1
-#SBATCH --time=8-23:59:59
-
-## change the paths below to your paths
-srun /home/students/ssiegel/anaconda3/envs/ubermag/bin/python3.8 /home/students/ssiegel/ubermag/MAGNA-U/mesh_making/makethecsvs.py $SLURM_ARRAY_TASK_ID $1
+version https://git-lfs.github.com/spec/v1
+oid sha256:bfb72758b9cfb3295d7d647fcd4494f33377a84333c62644827443db2f2280f5
+size 331

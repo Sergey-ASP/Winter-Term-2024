@@ -1,30 +1,3 @@
-site_name: MAGNA-U
-site_author: Sammy Siegel, Niels Vanderloo, Yumi Ijiri
-repo_url: "https://github.com/sammysiegel/MAGNA-U"
-
-
-nav:
-  - Home: index.md
-  - Installation: Install.md
-  - Documentation:
-    - MNP: MNP.md
-    - Save/Load MNPs: Save-Load MNPs.md
-    - MNP Systems: MNP_System.md
-    - MNP Drivers:
-      - Quick Drive: Quick_Drive.md
-      - Minimization Driver: MNP_Min_Driver.md
-      - Hysteresis Driver: MNP_HysteresisDriver.md
-    - MNP Analyzers:
-      - MNP Analyzer: MNP_Analyzer.md
-      - MNP Hysteresis Analyzer: MNP_Hysteresis_Analyzer.md
-      - MNP Domain Analyzer: MNP_Domain_Analyzer.md
-    - Lattice: Lattice.md
-    - Pre-generating Mesh CSVs: csv_pregen.md
-
-theme:
-  name: null
-  custom_dir: 'cinder'
-
-markdown_extensions:
-    - toc:
-        baselevel: 1
+version https://git-lfs.github.com/spec/v1
+oid sha256:9b5b2b9857cd1b3d930c13dbddf1f78a554393bf9a9133271ea6bd15f50bd51f
+size 783
